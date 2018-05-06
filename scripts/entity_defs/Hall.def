@@ -1,0 +1,19 @@
+<root>
+	<Properties>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+	<BaseMethods>
+        <reqAddMatcher>
+        <Arg>ENTITYCALL</Arg>
+        </reqAddMatcher>
+        <reqRemoveMatcher>
+        <Arg>ENTITYCALL</Arg>
+        </reqRemoveMatcher>
+	</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>

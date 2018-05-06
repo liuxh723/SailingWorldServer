@@ -1,0 +1,17 @@
+venv
+logs
+.idea
+__pycache__
+__pycache__/
+.idea/
+.idea
+logs/
+*.log
+scripts/base/.idea/workspace.xml
+*.pyc
+<<<<<<< HEAD
+scripts/base/.idea/workspace.xml
+=======
+>>>>>>> 14524cb07fbad30aa2e73b15cbf199200aa47aa5
+*.pyc
+*.pyc

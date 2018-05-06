@@ -1,0 +1,27 @@
+<root>
+    	<Volatile>
+		<position/>
+		<yaw/>
+		<pitch> 20 </pitch>
+	</Volatile>
+	<Properties>
+        <Player0>
+            <Type>ENTITYCALL</Type>
+            <Flags>BASE</Flags>
+        </Player0>
+        <Player1>
+            <Type>ENTITYCALL</Type>
+             <Flags>BASE</Flags>
+        </Player1>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+	</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>
