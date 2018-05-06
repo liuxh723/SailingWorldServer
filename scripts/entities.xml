@@ -1,4 +1,4 @@
-﻿<root>
+<root>
 	<!--
 		实体注册文件(<你的资产库>/scripts/entities.xml)
 		详细说明请参考：http://kbengine.org/cn/docs/configuration/entities.html
@@ -7,9 +7,4 @@
 
 	<!-- <Avatar/> -->
 	<Account hasClient="true"></Account><!-- <Account hasCell="true" hasBase="true" hasClient="true"></Account> -->
-	<Hall/>
-	<Battlefield></Battlefield>
-	<Avatar hasClient = "true"></Avatar>
-	<CardInfo hasClient = "true"></CardInfo>
-	<!--<CardList hasClient="true"></CardList>-->
 </root>

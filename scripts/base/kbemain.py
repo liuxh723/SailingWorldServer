@@ -12,8 +12,6 @@ def onBaseAppReady(isBootstrap):
 	"""
 	INFO_MSG('onBaseAppReady: isBootstrap=%s, appID=%s, bootstrapGroupIndex=%s, bootstrapGlobalIndex=%s' % \
 	 (isBootstrap, os.getenv("KBE_COMPONENTID"), os.getenv("KBE_BOOTIDX_GROUP"), os.getenv("KBE_BOOTIDX_GLOBAL")))
-	if isBootstrap:
-		KBEngine.createEntityLocally("Hall",{})
 
 def onReadyForLogin(isBootstrap):
 	"""
@@ -45,7 +43,7 @@ def onBaseAppShutDown(state):
 	@type state: int
 	"""
 	INFO_MSG('onBaseAppShutDown: state=%i' % state)
-
+		
 def onInit(isReload):
 	"""
 	KBEngine method.
@@ -61,35 +59,35 @@ def onFini():
 	引擎正式关闭
 	"""
 	INFO_MSG('onFini()')
-
+	
 def onCellAppDeath(addr):
 	"""
 	KBEngine method.
 	某个cellapp死亡
 	"""
 	WARNING_MSG('onCellAppDeath: %s' % (str(addr)))
-
+	
 def onGlobalData(key, value):
 	"""
 	KBEngine method.
 	globalData有改变
 	"""
 	DEBUG_MSG('onGlobalData: %s' % key)
-
+	
 def onGlobalDataDel(key):
 	"""
 	KBEngine method.
 	globalData有删除
 	"""
 	DEBUG_MSG('onDelGlobalData: %s' % key)
-
+	
 def onBaseAppData(key, value):
 	"""
 	KBEngine method.
 	baseAppData有改变
 	"""
 	DEBUG_MSG('onBaseAppData: %s' % key)
-
+	
 def onBaseAppDataDel(key):
 	"""
 	KBEngine method.

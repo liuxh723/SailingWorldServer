@@ -1,95 +1,42 @@
 <root>
 	<Properties>
-	  <Name>
-	  <Type>UNICODE</Type>
-	  <Flags>BASE_AND_CLIENT</Flags>
-	  <Persistent>true</Persistent>
-	  </Name>
-	   <Level>
-	  <Type>INT16</Type>
-	  <Flags>BASE_AND_CLIENT</Flags>
-	  <Persistent>true</Persistent>
-	  </Level>
-	   <Gold>
-	  <Type>INT32</Type>
-	  <Flags>BASE_AND_CLIENT</Flags>
-	  <Persistent>true</Persistent>
-	  </Gold>
-	  <Kabao>
-	  <Type>INT32</Type>
-	  <Flags>BASE_AND_CLIENT</Flags>
-	  <Persistent>true</Persistent>
-	  </Kabao>
-	   <CardList>
-	  <Type>CARD_LIST</Type>
-	  <Flags>BASE_AND_CLIENT</Flags>
-	  <Persistent>true</Persistent>
-	  </CardList>
-
-	  <CardGroupList>
-	  <Type>CARDGROUP_INFO_LIST</Type>
-	  <Flags>BASE_AND_CLIENT</Flags>
-	  <Persistent>true</Persistent>
-	  </CardGroupList>
+		<Name>
+			<Type>UNICODE</Type>
+			<Flags>BASE_AND_CLIENT</Flags>
+			<Persistent>true</Persistent>
+		</Name>
+		<Country>
+			<Type>UINT8</Type>
+			<Flags>BASE_AND_CLIENT</Flags>
+			<Persistent>true</Persistent>
+		</Country>
+		<Sex>
+			<Type>UINT8</Type>
+			<Flags>BASE_AND_CLIENT</Flags>
+			<Persistent>true</Persistent>
+		</Sex>
+		<Level>
+			<Type>INT16</Type>
+		    <Flags>BASE_AND_CLIENT</Flags>
+		    <Persistent>true</Persistent>
+		</Level>
+		<Gold>
+		   <Type>INT32</Type>
+		   <Flags>BASE_AND_CLIENT</Flags>
+		   <Persistent>true</Persistent>
+		</Gold>
 	</Properties>
 
 	<ClientMethods>
-		<onOpenPack>
-		<Arg>OPEN_PACK_RUL</Arg>
-		</onOpenPack>
-		<onReqCardList>
-		<Arg>CARD_LIST</Arg>
-		<Arg>CARDGROUP_INFO_LIST</Arg>
-		</onReqCardList>
-		<onEnterBattlefield>
-
-		</onEnterBattlefield>
-
 	</ClientMethods>
+
 	<BaseMethods>
-        <reqChangeName>
-        <Arg>UNICODE</Arg>
-        <Exposed />
-        </reqChangeName>
-        <reqChangeLevel>
-        <Arg>INT16</Arg>
-        <Exposed />
-        </reqChangeLevel>
-        <reqBuyKabao>
-        <Arg>INT32</Arg>
-        <Exposed />
-        </reqBuyKabao>
-        <reqOpenKabao>
-         <Exposed />
-        </reqOpenKabao>
-        <reqEditCardGroup>
-        <Arg>INT8</Arg>
-        <Arg>UNICODE</Arg>
-        <Arg>UINT8</Arg>
-        <Arg>GROUP_CARD_LIST</Arg>
-        <Exposed />
-        </reqEditCardGroup>
-          <reqDelCardGroup>
-        <Arg>INT8</Arg>
-        <Exposed />
-        </reqDelCardGroup>
-        <reqStartMatch>
-        <Arg>INT8</Arg>
-        <Exposed />
-        </reqStartMatch>
-        <reqStopMatch>
-          <Exposed />
-        </reqStopMatch>
-        <reqCardList>
-          <Exposed />
-        </reqCardList>
-		<onMatchSuccess>
-			<Arg>ENTITYCALL</Arg>
-			<Arg>INT32</Arg>
-		</onMatchSuccess>
-		<onEnterBattlefieldFinished>
+		<reqSetRole>
+			 <Arg>UINT8</Arg>
+			 <Arg>UINT8</Arg>
+			 <Arg>UNICODE</Arg>
 			 <Exposed />
-		</onEnterBattlefieldFinished>
+		</reqSetRole>
 	</BaseMethods>
 
 	<CellMethods>
