@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import os
 import KBEngine
+import d_city
+import copy
 from KBEDebug import *
 
 def onBaseAppReady(isBootstrap):
@@ -10,8 +12,12 @@ def onBaseAppReady(isBootstrap):
 	@param isBootstrap: 是否为第一个启动的baseapp
 	@type isBootstrap: BOOL
 	"""
+
 	INFO_MSG('onBaseAppReady: isBootstrap=%s, appID=%s, bootstrapGroupIndex=%s, bootstrapGlobalIndex=%s' % \
 	 (isBootstrap, os.getenv("KBE_COMPONENTID"), os.getenv("KBE_BOOTIDX_GROUP"), os.getenv("KBE_BOOTIDX_GLOBAL")))
+	if isBootstrap:
+		# 创建spacemanager
+		KBEngine.createEntityLocally( "SpaceManager", {} )
 
 def onReadyForLogin(isBootstrap):
 	"""

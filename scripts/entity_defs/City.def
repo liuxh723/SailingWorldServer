@@ -1,0 +1,52 @@
+<root>
+	<Properties>
+		<CityID>
+            <Type>UINT32</Type>
+			<Flags>BASE_AND_CLIENT</Flags>
+			<Persistent>true</Persistent>
+        </CityID>
+		<CityName>
+			<Type>UNICODE</Type>
+			<Flags>BASE_AND_CLIENT</Flags>
+			<Persistent>true</Persistent>
+		</CityName>
+        <CityType><!-- 0:领地 1：同盟港  -->
+            <Type>UINT8</Type>
+			<Flags>BASE_AND_CLIENT</Flags>
+			<Persistent>true</Persistent>
+        </CityType>
+		<CityCountry>
+			<Type>UINT8</Type>
+			<Flags>BASE_AND_CLIENT</Flags>
+			<Persistent>true</Persistent>
+		</CityCountry>
+		<BusinessDvelopment>
+			<Type>INT64</Type>
+		    <Flags>BASE_AND_CLIENT</Flags>
+		    <Persistent>true</Persistent>
+		</BusinessDvelopment>
+		<MilitaryDvelopment>
+		   <Type>INT64</Type>
+		   <Flags>BASE_AND_CLIENT</Flags>
+		   <Persistent>true</Persistent>
+		</MilitaryDvelopment>
+        <SellGoodsList>
+            <Type>CITY_SELL_GOODS_LIST</Type>
+            <Flags>BASE_AND_CLIENT</Flags>
+            <Persistent>true</Persistent>
+        </SellGoodsList>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+		<reqSellGoodsList>
+			 <Exposed />
+		</reqSellGoodsList>
+	</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>

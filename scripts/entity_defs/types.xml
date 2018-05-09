@@ -1,2 +1,40 @@
 <root>
+	<OBJECT_ID>			INT32		</OBJECT_ID>
+	<BOOL>				UINT8		</BOOL>
+	<CONTROLLER_ID>		INT32		</CONTROLLER_ID>
+	<EXPERIENCE>		INT32		</EXPERIENCE>
+	<ITEM_ID>			INT32		</ITEM_ID>
+	<SKILLID>			INT32		</SKILLID>
+	<QUESTID>			INT32		</QUESTID>
+	<DBID>				UINT64		</DBID>
+	<UID>				UINT64		</UID>
+	<UID1>				PYTHON		</UID1>	
+	<ENTITY_ID>			INT32		</ENTITY_ID>
+	<ENTITY_NO>			UINT32		</ENTITY_NO>
+	<SPACE_ID>			UINT32		</SPACE_ID>
+	<POSITION3D>		VECTOR3		</POSITION3D>
+	<DIRECTION3D>		VECTOR3		</DIRECTION3D>
+	<ENTITY_UTYPE>		UINT32		</ENTITY_UTYPE>
+
+    
+    <GOODSID>           UINT64      </GOODSID>
+    <CITY_SELL_GOODS_INFO>  FIXED_DICT
+        <implementedBy>GOODS_INFO.city_sell_goods_info_inst</implementedBy>
+        <Properties>
+            <GoodsID>
+                <Type>GOODSID</Type>
+            </GoodsID>
+            <GoodsNum>
+                <Type>UINT8</Type>
+            </GoodsNum>
+        </Properties>
+    </CITY_SELL_GOODS_INFO>
+    <CITY_SELL_GOODS_LIST>	FIXED_DICT
+		<implementedBy>GOODS_INFO.city_sell_goods_list_inst</implementedBy>
+		<Properties>
+			<values>
+				<Type>	ARRAY <of> CITY_SELL_GOODS_INFO </of>	</Type>
+			</values>
+		</Properties>
+	</CITY_SELL_GOODS_LIST>
 </root>
