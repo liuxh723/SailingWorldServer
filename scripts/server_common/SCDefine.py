@@ -15,3 +15,4 @@ TIMER_TYPE_SPAWN									= 7	# 出生点出生timer
 TIMER_TYPE_DESTROY									= 8	# entity销毁
 
 TIMER_TYPE_DEVELPMENT                               = 1 #
+TIMER_TYPE_GOODS_TYPE_PRICR_RACE                    = 30

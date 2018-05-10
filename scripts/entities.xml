@@ -10,4 +10,5 @@
 	<City/>
 	<SpaceManager/>
 	<Space/>
+	<Avatar hasClient="true"></Avatar>
 </root>

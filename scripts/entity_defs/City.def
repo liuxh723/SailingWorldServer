@@ -8,12 +8,10 @@
 		<CityName>
 			<Type>UNICODE</Type>
 			<Flags>BASE_AND_CLIENT</Flags>
-			<Persistent>true</Persistent>
 		</CityName>
         <CityType><!-- 0:领地 1：同盟港  -->
             <Type>UINT8</Type>
 			<Flags>BASE_AND_CLIENT</Flags>
-			<Persistent>true</Persistent>
         </CityType>
 		<CityCountry>
 			<Type>UINT8</Type>

@@ -18,7 +18,7 @@
 
     
     <GOODSID>           UINT64      </GOODSID>
-	<GOODTYPE>          UINT32		</GOODTYPE> 
+	<GOODSTYPE>          UINT32		</GOODSTYPE>
     <CITY_SELL_GOODS_INFO>  FIXED_DICT
         <implementedBy>GOODS_INFO.city_sell_goods_info_inst</implementedBy>
         <Properties>
@@ -40,7 +40,7 @@
 	<CITY_TYPE_PRICE_INFO>FIXED_DICT
 		<Properties>
             <GoodsType>
-                <Type>GOODTYPE</Type>
+                <Type>GOODSTYPE</Type>
             </GoodsType>
             <TypePrice>
                 <Type>FLOAT</Type>
