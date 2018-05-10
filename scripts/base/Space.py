@@ -27,13 +27,27 @@ class Space(KBEngine.Entity, GameObject):
 		#self._city = list(d_city.datas.keys())
 		for CityID in d_city.datas.keys():
 			if d_city.datas[CityID]["SpaceID"] == self.spaceUType:
-				KBEngine.createEntityAnywhere("City",{"CityID":CityID,"CityName":d_city.datas[CityID]["CityName"]},Functor.Functor(self.onCityCreatedCB, CityID))
+				KBEngine.createEntityFromDBID("City", CityID, self._onCityCreatedFromDBIDCB)
+				#KBEngine.createEntityAnywhere("City",{"CityID":CityID,"CityName":d_city.datas[CityID]["CityName"]},Functor.Functor(self.onCityCreatedCB, CityID))
 
-	def onCityCreatedCB(self, CityID, space):
+	def _onCityCreatedFromDBIDCB(self, baseRef, databaseId, wasActive):
 		"""
-		一个space创建好后的回调
+		一个City创建好后的回调
 		"""
-		DEBUG_MSG("Spaces::onCityCreatedCB: city %i. spaceID=%i" % (CityID, self.id))	
+		DEBUG_MSG("Spaces::onCityCreatedCB: city. databaseId=%i" % (databaseId))	
+		if wasActive:
+			ERROR_MSG("Space::onCityCreatedCB:(%i): this city is in world now!" % (self.id))
+			return
+		if baseRef is None:
+			KBEngine.createEntityAnywhere("City",{"CityID":databaseId},self.onCityCreatedCB)
+			ERROR_MSG("Space::onCityCreatedCB:(%i): the city you wanted to created is not exist!" % (self.id))
+			return		
+			
+
+	def onCityCreatedCB(self,entity):
+		DEBUG_MSG("Spaces::onCityCreatedCB: city %i. spaceID=%i" % (entity.CityID, self.id))
+		entity.initProperty()
+		entity.writeToDB()
 		
 	def loginToSpace(self, avatarEntityCall, context):
 		"""

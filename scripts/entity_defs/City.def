@@ -35,6 +35,11 @@
             <Flags>BASE_AND_CLIENT</Flags>
             <Persistent>true</Persistent>
         </SellGoodsList>
+		<TypePriceList>
+			<Type>CITY_TYPE_PRICE_LIST</Type>
+            <Flags>BASE</Flags>
+            <Persistent>true</Persistent>
+		</TypePriceList>
 	</Properties>
 
 	<ClientMethods>
