@@ -51,4 +51,32 @@
 	<CITY_TYPE_PRICE_LIST>
 		ARRAY <of> CITY_TYPE_PRICE_INFO </of>
 	</CITY_TYPE_PRICE_LIST>
+
+	<AVATAR_INFOS>	FIXED_DICT
+		<implementedBy>AVATAR_INFOS.avatar_info_inst</implementedBy>
+		<Properties>
+			<dbid>
+				<Type>	DBID	</Type>
+			</dbid>
+			<Name>
+				<Type>	UNICODE	</Type>
+				<DatabaseLength> 256 </DatabaseLength>
+			</Name>
+			<RoleType>
+				<Type>	UINT8	</Type>
+			</RoleType>
+			<Country>
+				<Type>UINT8</Type>
+			</Country>
+			<Sex>
+				<Type>UINT8</Type>
+			</Sex>
+			<Level>
+				<Type>INT16</Type>
+			</Level>
+			<Gold>
+		   		<Type>INT32</Type>
+			</Gold>
+		</Properties>
+	</AVATAR_INFOS>	
 </root>

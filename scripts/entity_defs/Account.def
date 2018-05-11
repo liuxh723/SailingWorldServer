@@ -1,45 +1,38 @@
 <root>
 	<Properties>
-		<Name>
-			<Type>UNICODE</Type>
-			<Flags>BASE_AND_CLIENT</Flags>
-			<Persistent>true</Persistent>
-		</Name>
-		<Country>
-			<Type>UINT8</Type>
-			<Flags>BASE_AND_CLIENT</Flags>
-			<Persistent>true</Persistent>
-		</Country>
-		<Sex>
-			<Type>UINT8</Type>
-			<Flags>BASE_AND_CLIENT</Flags>
-			<Persistent>true</Persistent>
-		</Sex>
-		<Level>
-			<Type>INT16</Type>
-		    <Flags>BASE_AND_CLIENT</Flags>
-		    <Persistent>true</Persistent>
-		</Level>
-		<Gold>
-		   <Type>INT32</Type>
-		   <Flags>BASE_AND_CLIENT</Flags>
-		   <Persistent>true</Persistent>
-		</Gold>
+		<Character>
+			<Type>			AVATAR_INFOS		</Type>
+			<Flags>			BASE					</Flags>
+			<Default>								</Default>
+			<Persistent>		true				</Persistent>
+		</Character>
 	</Properties>
 
 	<ClientMethods>
+		<onCreateAvatarResult>
+			<Arg>			UINT8 				</Arg>
+			<Arg>			AVATAR_INFOS 		</Arg>
+		</onCreateAvatarResult>
+		<onReqAvatar>
+			<Arg>UINT8</Arg>
+			<Arg>AVATAR_INFOS</Arg>
+		</onReqAvatar>
 	</ClientMethods>
 
 	<BaseMethods>
-		<reqSetRole>
+		<reqCreateAvatar>
 			 <Arg>UINT8</Arg>
 			 <Arg>UINT8</Arg>
 			 <Arg>UNICODE</Arg>
 			 <Exposed />
-		</reqSetRole>
+		</reqCreateAvatar>
+		<reqAvatar>
+			 <Exposed />
+		</reqAvatar>
 	</BaseMethods>
 
 	<CellMethods>
+		
 	</CellMethods>
 
 </root>

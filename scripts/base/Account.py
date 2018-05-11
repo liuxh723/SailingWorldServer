@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import KBEngine
+from AVATAR_INFOS import TAvatarInfos
 from KBEDebug import *
 
 class Account(KBEngine.Proxy):
@@ -39,8 +40,37 @@ class Account(KBEngine.Proxy):
 		DEBUG_MSG("Account[%i].onClientDeath:" % self.id)
 		self.destroy()
 
-	def reqSetRole(self, country, sex, name):
-		INFO_MSG("account[%i] onReqSetRole:%s" % (self.id, name))
+	def reqCreateAvatar(self, country, sex, name):
+		INFO_MSG("account[%i] reqCreateAvatar:%s" % (self.id, name))
+		avatarinfo = TAvatarInfos()
+		avatarinfo.extend([0, "", 0, 0, )])
+
+		if self.Character != None:
+			self.client.onCreateAvatarResult(3, avatarinfo)
+			return
+		props = {
+			"name"				: name,
+			"roleType"			: roleType,
+			"level"				: 1,
+			"spaceUType"		: spaceUType,
+			"direction"			: (0, 0, d_avatar_inittab.datas[roleType]["spawnYaw"]),
+			"position"			: spaceData.get("spawnPos", (0,0,0)),
+
+			"component1"		: { "bb" : 1231, "state" : 456},
+			"component3"		: { "state" : 888 },
+			}
+			
+		avatar = KBEngine.createEntityLocally('Avatar', props)
+		if avatar:
+			avatar.writeToDB(self._onAvatarSaved)
 		self.Country = country
 		self.Sex = sex
 		self.Name = name
+
+	def reqAvatar(self):
+		DEBUG_MSG("Account[%i].reqAvatar:" % self.id)
+		if self.Character != None:
+			self.client.onReqAvatar(1,self.Character)
+		else:
+			self.client.onReqAvatar(0,self.Character)
+
