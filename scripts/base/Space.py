@@ -3,6 +3,7 @@ import KBEngine
 import random
 import copy
 import math
+import SCDefine
 from KBEDebug import *
 from interfaces.GameObject import GameObject
 import d_spaces
@@ -18,15 +19,16 @@ class Space(KBEngine.Entity, GameObject):
 	def __init__(self):
 		KBEngine.Entity.__init__(self)
 		GameObject.__init__(self)
-		#self.createCellEntityInNewSpace(None)
+		self.createCellEntityInNewSpace(None)
 		
-		#self.spaceUTypeB = self.cellData["spaceUType"]
+		self.spaceUTypeB = self.cellData["spaceUType"]
 		
+		self.avatars = {}
 		#self.spaceResName = d_spaces.datas.get(self.spaceUTypeB)['resPath']
 
 		#self._city = list(d_city.datas.keys())
 		for CityID in d_city.datas.keys():
-			if d_city.datas[CityID]["SpaceID"] == self.spaceUType:
+			if d_city.datas[CityID]["SpaceID"] == self.spaceUTypeB:
 				KBEngine.createEntityFromDBID("City", CityID, self._onCityCreatedFromDBIDCB)
 				#KBEngine.createEntityAnywhere("City",{"CityID":CityID,"CityName":d_city.datas[CityID]["CityName"]},Functor.Functor(self.onCityCreatedCB, CityID))
 
@@ -117,8 +119,8 @@ class Space(KBEngine.Entity, GameObject):
 		entity的cell部分实体被创建成功
 		"""
 		DEBUG_MSG("Space::onGetCell: %i" % self.id)
-		self.addTimer(0.1, 0.1, SCDefine.TIMER_TYPE_SPACE_SPAWN_TICK)
-		KBEngine.globalData["Spaces"].onSpaceGetCell(self.spaceUTypeB, self, self.spaceKey)
+		#self.addTimer(0.1, 0.1, SCDefine.TIMER_TYPE_SPACE_SPAWN_TICK)
+		KBEngine.globalData["SpaceManager"].onSpaceGetCell(self.spaceUTypeB, self, self.spaceKey)
 		GameObject.onGetCell(self)
 		
 

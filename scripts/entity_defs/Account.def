@@ -1,21 +1,23 @@
 <root>
 	<Properties>
 		<Character>
-			<Type>			AVATAR_INFOS		</Type>
-			<Flags>			BASE					</Flags>
-			<Default>								</Default>
-			<Persistent>		true				</Persistent>
+			<Type>			DBID		</Type>
+			<Flags>			BASE		</Flags>
+			<Persistent>	true		</Persistent>
 		</Character>
+		<activeAvatar>
+			<Type>			ENTITYCALL				</Type>
+			<Flags>			BASE					</Flags>
+		</activeAvatar>
 	</Properties>
 
 	<ClientMethods>
 		<onCreateAvatarResult>
-			<Arg>			UINT8 				</Arg>
-			<Arg>			AVATAR_INFOS 		</Arg>
+			<Arg>			UINT8 			</Arg>
+			<Arg>			ENTITYCALL 		</Arg>
 		</onCreateAvatarResult>
 		<onReqAvatar>
 			<Arg>UINT8</Arg>
-			<Arg>AVATAR_INFOS</Arg>
 		</onReqAvatar>
 	</ClientMethods>
 

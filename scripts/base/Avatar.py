@@ -36,8 +36,7 @@ class Avatar(KBEngine.Proxy,
         该entity被正式激活为可使用， 此时entity已经建立了client对应实体， 可以在此创建它的
         cell部分。
         """
-        INFO_MSG("Avatar[%i-%s] entities enable. spaceUTypeB=%s, entityCall:%s" % (
-        self.id, self.nameB, self.spaceUTypeB, self.client))
+        #INFO_MSG("Avatar[%i-%s] entities enable. spaceUTypeB=%s, entityCall:%s" % (self.id, self.nameB, self.spaceUTypeB, self.client))
         Teleport.onClientEnabled(self)
 
         if self._destroyTimer > 0:
@@ -110,7 +109,7 @@ class Avatar(KBEngine.Proxy,
         客户端已经获得了cell部分实体的相关数据
         """
         INFO_MSG("Avatar[%i].onClientGetCell:%s" % (self.id, self.client))
-        self.client.component3.helloCB(777)
+        #self.client.component3.helloCB(777)
 
     def onDestroyTimer(self):
         DEBUG_MSG("Avatar::onDestroyTimer: %i" % (self.id))

@@ -23,18 +23,37 @@
   </Components>
 
 	<Properties>
+		<PlayerName>
+			<Type>	UNICODE	</Type>
+			<Flags>			ALL_CLIENTS		</Flags>
+			<DatabaseLength> 256 </DatabaseLength>
+			<Persistent>	true		</Persistent>
+		</PlayerName>
 		<RoleType>
-			<Type>			UINT8		</Type>
-			<Flags>			BASE		</Flags>
+			<Type>	UINT8	</Type>
+			<Flags>			ALL_CLIENTS		</Flags>
 			<Persistent>	true		</Persistent>
 		</RoleType>
-
+		<Country>
+			<Type>UINT8</Type>
+			<Flags>			ALL_CLIENTS		</Flags>
+			<Persistent>	true		</Persistent>
+		</Country>
+		<Sex>
+			<Type>UINT8</Type>
+			<Flags>			ALL_CLIENTS		</Flags>
+			<Persistent>	true		</Persistent>
+		</Sex>
 		<Level>
-			<Utype>			41002		</Utype>
-			<Type>			UINT16		</Type>
-			<Flags>			CELL_PUBLIC_AND_OWN			</Flags>
+			<Type>INT16</Type>
+			<Flags>			ALL_CLIENTS		</Flags>
 			<Persistent>	true		</Persistent>
 		</Level>
+		<Gold>
+		   	<Type>INT32</Type>
+			<Flags>			BASE_AND_CLIENT		</Flags>
+			<Persistent>	true		</Persistent>
+		</Gold>
 
 		<!--
 		<playerName>
@@ -53,7 +72,9 @@
 	</Properties>
 
 	<BaseMethods>
-
+		<createCell>
+			<Arg>			ENTITYCALL	</Arg>
+		</createCell>
 	</BaseMethods>
 
 	<CellMethods>
