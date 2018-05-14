@@ -1,0 +1,44 @@
+{
+	"folders": [
+		{
+			"path": "base"
+		},
+		{
+			"path": "cell"
+		},
+		{
+			"path": "bots"
+		},
+		{
+			"path": "common"
+		},
+		{
+			"path": "data"
+		},
+		{
+			"path": "db"
+		},
+		{
+			"path": "entity_defs"
+		},
+		{
+			"path": "interface"
+		},
+		{
+			"path": "logger"
+		},
+		{
+			"path": "login"
+		},
+		{
+			"path": "server_common"
+		},
+		{
+			"path": "user_type"
+		},
+		{
+			"path": "tips"
+		}
+	],
+	"settings": {}
+}

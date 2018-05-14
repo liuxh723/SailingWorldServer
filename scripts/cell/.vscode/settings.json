@@ -1,0 +1,6 @@
+{
+    "python.autoComplete.extraPaths": [
+        "..\\tips\\cellapp"
+    ],
+    "python.linting.pylintEnabled": false
+}

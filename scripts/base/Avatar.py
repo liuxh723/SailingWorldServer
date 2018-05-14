@@ -27,7 +27,6 @@ class Avatar(KBEngine.Proxy,
         self.cellData["dbid"] = self.databaseID
         self.nameB = self.cellData["name"]
         self.spaceUTypeB = self.cellData["spaceUType"]
-
         self._destroyTimer = 0
 
     def onClientEnabled(self):

@@ -1,0 +1,6 @@
+{
+    "python.autoComplete.extraPaths": [
+        "..\\tips\\baseapp"
+    ],
+    "python.linting.pylintEnabled": false
+}

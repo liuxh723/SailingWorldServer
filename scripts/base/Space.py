@@ -20,12 +20,9 @@ class Space(KBEngine.Entity, GameObject):
 		KBEngine.Entity.__init__(self)
 		GameObject.__init__(self)
 		self.createCellEntityInNewSpace(None)
-		
 		self.spaceUTypeB = self.cellData["spaceUType"]
-		
 		self.avatars = {}
 		#self.spaceResName = d_spaces.datas.get(self.spaceUTypeB)['resPath']
-
 		#self._city = list(d_city.datas.keys())
 		for CityID in d_city.datas.keys():
 			if d_city.datas[CityID]["SpaceID"] == self.spaceUTypeB:
