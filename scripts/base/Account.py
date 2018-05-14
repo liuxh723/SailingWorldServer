@@ -67,10 +67,8 @@ class Account(KBEngine.Proxy):
 			self.activeAvatar = None
 	def reqCreateAvatar(self, country, sex, name):
 		INFO_MSG("account[%i] reqCreateAvatar:%s" % (self.id, name))
-		avatarinfo = TAvatarInfos()
-		avatarinfo.extend([0, "", 0, 0, 0])
 		if self.Character != 0:
-			self.client.onCreateAvatarResult(3, avatarinfo)
+			self.client.onCreateAvatarResult(3, None)
 			return
 
 		if country == 1 or country == 2:
@@ -80,7 +78,7 @@ class Account(KBEngine.Proxy):
 		if country == 5 or country == 6:
 			spaceUType = 3
 		props = {
-			"PlayerName"				: name,
+			"PlayerName"		: name,
 			"Sex"				: sex,
 			"Level"				: 1,
 			"Country"			: country,
@@ -88,7 +86,7 @@ class Account(KBEngine.Proxy):
 
 			"spaceUType"		: spaceUType,
 			#"direction"			: (0, 0, d_avatar_inittab.datas[roleType]["spawnYaw"]),
-			"position"			: (0,0,0),
+			"position"			: d_avatar_inittab.datas[country]["spawnPos"],
 
 			#"component1"		: { "bb" : 1231, "state" : 456},
 			#"component3"		: { "state" : 888 },
@@ -101,7 +99,11 @@ class Account(KBEngine.Proxy):
 	def reqAvatar(self):
 		DEBUG_MSG("Account[%i].reqAvatar:%i" % (self.id,self.Character))
 		if self.Character != 0:
-			KBEngine.createEntityFromDBID("Avatar", self.Character, self.__onAvatarCreated)
+			avatar = KBEngine.createEntityFromDBID("Avatar", self.Character, self.__onAvatarCreated)
+			avatar.accountEntity = self
+			self.activeAvatar = avatar
+			self.giveClientTo(avatar)
+
 		else:
 			self.client.onReqAvatar(0)
 
