@@ -100,10 +100,6 @@ class Account(KBEngine.Proxy):
 		DEBUG_MSG("Account[%i].reqAvatar:%i" % (self.id,self.Character))
 		if self.Character != 0:
 			avatar = KBEngine.createEntityFromDBID("Avatar", self.Character, self.__onAvatarCreated)
-			avatar.accountEntity = self
-			self.activeAvatar = avatar
-			self.giveClientTo(avatar)
-
 		else:
 			self.client.onReqAvatar(0)
 
